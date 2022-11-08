@@ -1,0 +1,256 @@
+
+.header{
+  width: 100%;
+  height: 5rem;
+  background-color: grey;
+}
+
+.container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main{
+  height: 100%;
+  min-width: 300px;
+  width: 600px;
+  padding: 1rem 1rem;
+  margin: 2.5rem 1rem;
+} 
+.cart{
+  height: 400px;
+  max-width: 400px;
+  width: 400px;
+  margin-top: 4rem;
+  margin-right: 1rem;
+  background-color: grey;
+}
+
+.footer {
+  width: 100%;
+  height: 90px;
+  background-color: grey;
+}
+
+/********** StepLine.js **********/
+
+.step{
+  margin-bottom: 4rem;
+}
+
+.step-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.step-item{
+  display: flex;
+  margin-right: 1rem;
+  position: relative;
+  align-items: center;
+
+}
+
+.step-number{
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+  border-radius:50%;
+  text-align: center;
+  border: 1px solid grey;
+  margin-right: .5rem;
+}
+
+.step-run-line{
+  height: 1px;
+  max-width: 60px;
+  width: 10%;
+  border:2px solid black;
+  margin: 0 1rem;
+  flex-grow: 1;
+}
+
+
+/********** FormStep1.js **********/
+.form{
+  height:380px;
+}
+.form-step1{
+  min-width: 300px;
+  display:grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 1em;
+  margin: 2rem 0;
+}
+
+select{
+  border:1px solid grey;
+  border-radius: 5px;
+  height: 4rem;
+  color: grey;
+  padding-left: .5rem;
+}
+
+
+input{
+  padding: .6rem 0;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding-left: .5rem;
+  height: 20px;
+
+}
+
+.input-item>h5 {
+  color: rgb(108, 108, 108);
+}
+
+.input-item{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  height: 4rem;
+}
+
+.input-title{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.input-name{
+  grid-column-start: 3;
+  grid-column-end: 7;
+}
+
+.input-email{
+  grid-column-start:4;
+  grid-column-end:7;
+}
+
+.input-phone{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.input-county{
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.input-address{
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 7;
+}
+
+/********** FormStep2.js **********/
+
+.radio-item{
+  height: 60px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0;
+}
+input[type='radio']{
+  margin: 0 2rem;
+}
+.transport-content{
+  width: 100%;
+  font-size: 14px;
+}
+.transport-content-title{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 30px;
+  line-height: 30px;
+  position: relative;
+}
+.transport-content-title >div:nth-child(2){
+  font-size: 12px;
+  position: relative;
+  top: -5px;
+  right: 10px;
+}
+.transport-content>div:nth-child(2) {
+  font-size: 12px;
+}
+
+
+/********** FormStep3.js **********/
+
+.card{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: grey;
+}
+.card-item{
+  margin: .4rem 0;
+}
+input[name='card-name']{
+  width: 60%;
+}
+input[name='card-num'] {
+  width: 60%;
+}
+
+.card-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2rem;
+  width: 100%;
+}
+input[name='card-term'] {
+  width: 100%;
+  max-width: 300px;
+}
+input[name='card-cvc'] {
+  width: 100%;
+  max-width: 300px;
+}
+
+
+
+
+/********** ControlButton.js **********/
+.control-button{
+  border-top: 1px solid grey;
+  height: 100px;
+  width: 100%;
+}
+.btn-step{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.btn-prev{
+  margin: .7rem 0;
+  cursor: pointer;
+}
+.btn-next{
+  background-color: rgb(242, 147, 173);
+  width: 120px;
+  height: 40px;
+  text-align:center;
+  line-height: 40px;
+  padding: .3rem 2rem;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}

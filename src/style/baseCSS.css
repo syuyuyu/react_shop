@@ -1,0 +1,42 @@
+html {
+  font-size: 16px;
+  height: 100%;
+}
+h1 {
+  font-size: 30px;
+  font-weight: 1000;
+  margin: .5rem 0;
+}
+h2{
+  font-size: 24px;
+  font-weight: 800;
+  margin: .5rem 0;
+}
+h5{
+  font-size: 12px;
+  font-weight: 800;
+  margin: .3rem 0
+}
+
+
+
+/* common */
+
+
+.visiblility {
+  visibility: hidden;
+}
+
+.dis-none {
+  display: none;
+}
+.bg-grey{
+  /* background-color: grey; */
+  border-color: rgb(180, 180, 180);
+  color: rgb(180, 180, 180);
+}
+.bg-black{
+  border-color: black;
+  color: rgb(255, 255, 255);
+  background-color: black;
+}

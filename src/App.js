@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import './style/App.css';
+import './style/reset.css'
+import './style/baseCSS.css'
 
-function App() {
+import StepLine from './component/StepLine/StepLine.js'
+import FormStep1 from './component/FormStep/FormStep1.js'
+import FormStep2 from './component/FormStep/FormStep2.js'
+import FormStep3 from './component/FormStep/FormStep3.js'
+import ControlButton from './component/ControlButton/ControlButton.js'
+import Header from './component/Header/Header.js'
+import Footer from './component/Footer/Footer.js'
+import Cart from './component/Cart/Cart.js'
+
+
+export default function App(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header />
+      <div className='container'>
+        <section className='main'>
+          <div className='title'>
+            <StepLine />
+          </div>
+          <div className='form'>
+            <FormStep1 />
+          </div>
+          <div className='control-button'>
+            <ControlButton />
+          </div>
+        </section>
+        <section className='cart'>
+          <Cart />
+        </section>
+      </div>
+      <Footer />
+    </>
+  )
 }
-
-export default App;
