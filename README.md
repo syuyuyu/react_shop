@@ -17,7 +17,7 @@ React 框架使用
 2.clone 專案至本機
 
 ```
-git clone https://github.com/syuyuyu/restaurant.git
+git clone https://github.com/syuyuyu/react_shop.git
 ```
 
 3.開啟終端機(Terminal)進入專案資料夾，輸入
@@ -31,10 +31,6 @@ npm install
 ```
 npm start
 ```
-
-5.在瀏覽器輸入 "[http://localhost:3000](http://localhost:3000)"開始程式
-
----
 
 # Getting Started with Create React App
 
