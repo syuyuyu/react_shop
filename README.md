@@ -1,3 +1,41 @@
+# React shop 專案
+
+React 框架使用
+
+## 專案畫面
+
+[image](https://github.com/syuyuyu/react_shop/blob/main/public/img/sample.jpg?raw=true)
+
+### 功能
+
+練習使用框架建立專案，靜態網頁。
+
+### 安裝
+
+1.確認本機環境已下載 npm 及 Node.js
+
+2.clone 專案至本機
+
+```
+git clone https://github.com/syuyuyu/restaurant.git
+```
+
+3.開啟終端機(Terminal)進入專案資料夾，輸入
+
+```
+npm install
+```
+
+4.終端機輸入開啟專案
+
+```
+npm start
+```
+
+5.在瀏覽器輸入 "[http://localhost:3000](http://localhost:3000)"開始程式
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
