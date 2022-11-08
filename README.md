@@ -4,7 +4,7 @@ React 框架使用
 
 ## 專案畫面
 
-[image](https://github.com/syuyuyu/react_shop/blob/main/public/img/sample.jpg?raw=true)
+![image](https://github.com/syuyuyu/react_shop/blob/main/public/img/sample.jpg?raw=true)
 
 ### 功能
 
