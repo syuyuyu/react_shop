@@ -1,8 +1,8 @@
 import React from 'react';
-import {CartList} from './cart_data.js'
-import RenderItem from './CartItems.js'
+import {CartList} from './cart_data'
+import RenderItem from './CartItems'
 
-
+//方法一 使用prop傳值，另一半在CartItems.js裡
 export default function Cart(){
   return (
     <div className="cart-container">

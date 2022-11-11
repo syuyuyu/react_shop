@@ -1,4 +1,4 @@
-//方法一 使用prop傳值
+
 export default function RenderItem(product){
   return(
     <div className="cart-item" key={product.id}>
