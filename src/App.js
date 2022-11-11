@@ -11,7 +11,7 @@ import FormStep3 from './component/FormStep/FormStep3.js'
 import ControlButton from './component/ControlButton/ControlButton.js'
 import Header from './component/Header/Header.js'
 import Footer from './component/Footer/Footer.js'
-import Cart from './component/cart/Cart.js'
+import Cart from './component/Cart/Cart.js'
 
 
 export default function App(){
