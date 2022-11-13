@@ -4,11 +4,11 @@ React 框架使用
 
 ## 專案畫面
 
-![image](https://github.com/syuyuyu/react_shop/blob/main/public/img/sample02.jpg?raw=true)
+![image](https://github.com/syuyuyu/react_shop/blob/main/public/img/sample03.jpg?raw=true)
 
 ### 功能
 
-練習使用框架建立專案，靜態網頁。
+練習使用框架建立專案，動態互動，轉換頁面及購物車金額與數量。
 
 ### 安裝
 
