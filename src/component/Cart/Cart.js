@@ -1,31 +1,33 @@
 import React from 'react';
+import {useState} from 'react';
+
 import {CartList} from './cart_data'
 import RenderItem from './CartItems'
 
+
 //方法一 使用prop傳值，另一半在CartItems.js裡
 export default function Cart(){
+  const [lists , setLists] = useState(CartList);
+
+  let totalCash = 0
+  lists.forEach(list =>{
+    totalCash += list.price*list.quantity
+  })
+
   return (
     <div className="cart-container">
       <h3>購物籃</h3>
       <div className='cart-group'>
-        {CartList.map( product=>
-          <RenderItem
-          key= {product.id}
-          name={product.name}
-          img={product.img}
-          price={product.price}
-          quantity={product.quantity}
-          />
-        )}
+          <RenderItem lists={lists} setLists={setLists}/>
       </div>
-      <div className="cart-down cart-fee">
-        <span>運費</span>
-        <span>免費</span>
-      </div>
-      <div className="cart-down cart-total">
-        <div>小計</div>
-        <div>$400</div>
-      </div>
+        <div className="cart-down cart-fee">
+          <span>運費</span>
+          <span>免費</span>
+        </div>
+        <div className="cart-down cart-total">
+          <div>小計</div>
+          <div>{totalCash}</div>
+        </div>
     </div>
   )
 }
