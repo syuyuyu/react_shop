@@ -1,6 +1,9 @@
+import {useContext} from 'react'
+import { FormContext } from '../Context/FormContext.js';
 
-export default function ControlButton({stepData,setStepData}){
-  // const [stepData,setStepData]=useState('step1')
+
+export default function ControlButton({onStep3Submit}){
+  const {stepData,setStepData}=useContext(FormContext)
 
   function handleNextStep(){
     if(stepData === 'step1'){
@@ -21,6 +24,8 @@ export default function ControlButton({stepData,setStepData}){
       setStepData(stepData)
     }
   }  
+
+
 
 
   function Step1(){
@@ -50,7 +55,7 @@ export default function ControlButton({stepData,setStepData}){
       <div className="btn-step-3" data-step="step3">
         <div className='btn-step'>
           <div onClick={handlePrevStep} className="btn-prev">←上一步</div>
-          <div onClick={handleNextStep} className="btn-next">確認下單</div>
+          <div onClick={()=>onStep3Submit()} className="btn-next">確認下單</div>
         </div>
       </div>
     )

@@ -1,3 +1,6 @@
+import {useContext} from 'react'
+import { FormContext } from '../Context/FormContext.js';
+
 const step1={
   id:1,
   name:'寄送地址',
@@ -13,8 +16,8 @@ const step3={
 
 
 
-export default function StepLine({stepData}){
-
+export default function StepLine(){
+  const {stepData,setStepData}=useContext(FormContext)
 
 
   return (
