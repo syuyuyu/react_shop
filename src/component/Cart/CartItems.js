@@ -1,5 +1,10 @@
+import {useContext} from 'react';
+import {CartContext} from '../Context/CartContext'
 
-export default function RenderItem({lists,setLists}){
+export default function CartItems(){
+  //帶入context的值
+  const {lists,setLists} = useContext(CartContext);
+  
 
   function handleMinusClick(listId){
     let nextLists = lists.map(li=>{
@@ -27,14 +32,13 @@ export default function RenderItem({lists,setLists}){
       };
     });
     setLists(nextLists)
-  }
+  };
     
 
 
   return(
     lists.map((list =>
       <div className="cart-item" key={list.id} data-price={list.price} data-quantity={list.quantity}>
-
         <div className="cart-img">
           <img src={list.img} alt={list.name} />
         </div>
@@ -55,7 +59,6 @@ export default function RenderItem({lists,setLists}){
               className="cart-content-btn cart-content-btn-add">+</div>
           </div>
         </div>
-
       </div>
     ))
   )

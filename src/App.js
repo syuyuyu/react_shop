@@ -1,5 +1,9 @@
 import React from 'react';
-import {useState} from 'react'
+import {useState,useContext} from 'react'
+import { FormContext } from './component/Context/FormContext.js';
+import { InputValueContext } from './component/Context/InputValueContext.js';
+import {inputValue} from './component/Context/InputValueContext.js';
+
 
 import './style/App.css';
 import './style/reset.css'
@@ -17,25 +21,42 @@ import Cart from './component/Cart/Cart.js'
 
 export default function App(){
   const [stepData,setStepData]=useState('step1');
+  const [value,setValue] = useState(inputValue);
+
+  function handleSubmit(){
+    console.log(value)
+    setValue({
+      name : '',
+      number: '',
+      term: '',
+      cvc: '',
+    })
+  }
+
+
 
   return (
     <>
       <Header />
       <div className='container'>
-        <section className='main'>
-          <div className='title'>
-            <StepLine stepData={stepData}/>
-          </div>
-          <div className='form'>
-            {/* <FormStep1 stepData={stepData}/> */}
-            {stepData === 'step1' && <FormStep1 />}
-            {stepData === 'step2' && <FormStep2 />}
-            {stepData === 'step3' && <FormStep3 />}
-          </div>
-          <div className='control-button'>
-            <ControlButton stepData={stepData} setStepData={setStepData}/>
-          </div>
-        </section>
+        <FormContext.Provider value={{stepData,setStepData,handleSubmit}}>
+        <InputValueContext.Provider value={{value,setValue}}>
+          <section className='main'>
+              <div className='title'>
+                <StepLine />
+              </div>
+            
+            <div className='form'>
+              {stepData === 'step1' && <FormStep1 />}
+              {stepData === 'step2' && <FormStep2 />}
+              {stepData === 'step3' && <FormStep3 />}
+            </div>
+            <div className='control-button'>
+              <ControlButton onStep3Submit={handleSubmit}/>
+            </div>
+          </section>
+        </InputValueContext.Provider>
+        </FormContext.Provider>
         <section className='cart'>
           <Cart />
         </section>

@@ -1,13 +1,13 @@
 import React from 'react';
+import CartItems from './CartItems'
 import {useState} from 'react';
-
-import {CartList} from './cart_data'
-import RenderItem from './CartItems'
+import {CartContext,CartList} from '../Context/CartContext'
 
 
 //方法一 使用prop傳值，另一半在CartItems.js裡
 export default function Cart(){
-  const [lists , setLists] = useState(CartList);
+  const [lists,setLists]=useState(CartList)
+
 
   let totalCash = 0
   lists.forEach(list =>{
@@ -18,7 +18,9 @@ export default function Cart(){
     <div className="cart-container">
       <h3>購物籃</h3>
       <div className='cart-group'>
-          <RenderItem lists={lists} setLists={setLists}/>
+        <CartContext.Provider value={{lists,setLists}}>
+          <CartItems />
+        </CartContext.Provider>
       </div>
         <div className="cart-down cart-fee">
           <span>運費</span>
