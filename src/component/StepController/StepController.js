@@ -2,10 +2,13 @@ import {useContext} from 'react'
 import { FormContext } from '../Context/FormContext.js';
 import {InputValueContext} from '../Context/InputValueContext.js';
 import { IsPopupContext } from '../Context/IsPopupContext.js';
+import Step1 from './Step/Step1.js'
+import Step2 from './Step/Step2.js'
+import Step3 from './Step/Step3.js'
 
 
-
-export default function ControlButton(){
+// ControlButton
+export default function StepController(){
   const {stepData,setStepData}=useContext(FormContext);
 const {isPopup,setIsPopup}=useContext(IsPopupContext);
   const {value,setValue} = useContext(InputValueContext);
@@ -37,47 +40,11 @@ const {isPopup,setIsPopup}=useContext(IsPopupContext);
   }
 
 
-
-  function Step1(){
-    return(
-      <div className="btn-step-1" data-step="step1">
-        <div className='btn-step'>
-          <div className="btn-prev visiblility">←上一步</div>
-          <div onClick={handleNextStep} className="btn-next">下一步→</div>
-        </div>
-      </div>
-    )
-  }
-
-  function Step2(){
-    return(
-      <div className="btn-step-2" data-step="step2">
-        <div className='btn-step'>
-          <div onClick={handlePrevStep} className="btn-prev">←上一步</div>
-          <div onClick={handleNextStep} className="btn-next">下一步→</div>
-        </div>
-      </div>
-    )
-  }
-
-  function Step3(){
-    return(
-      <div className="btn-step-3" data-step="step3">
-        <div className='btn-step'>
-          <div onClick={handlePrevStep} className="btn-prev">←上一步</div>
-          <div onClick={handleSubmit} className="btn-next">確認下單</div>
-        </div>
-      </div>
-    )
-  }
-  
-
-
   return(
     <>
-      {stepData === 'step1' && <Step1 />}
-      {stepData === 'step2' && <Step2 />}
-      {stepData === 'step3' && <Step3 />}
+      {stepData === 'step1' && <Step1 onNextClick={handleNextStep}/>}
+      {stepData === 'step2' && <Step2 onNextClick={handleNextStep} onPrevClick={handlePrevStep}/>}
+      {stepData === 'step3' && <Step3 onSubmit={handleSubmit} onPrevClick={handlePrevStep}/>}
     </>
   )
 }

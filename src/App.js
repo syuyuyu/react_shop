@@ -14,7 +14,7 @@ import StepLine from './component/StepProgressBar/StepLine.js'
 import FormStep1 from './component/FormStep/FormStep1.js'
 import FormStep2 from './component/FormStep/FormStep2.js'
 import FormStep3 from './component/FormStep/FormStep3.js'
-import ControlButton from './component/StepController/StepController.js'
+import StepController from './component/StepController/StepController.js'
 import Header from './component/Header/Header.js'
 import Footer from './component/Footer/Footer.js'
 import Cart from './component/Cart/Cart.js'
@@ -49,7 +49,7 @@ export default function App(){
             </div>
             <div className='control-button'>
               {/* <ControlButton onStep3Submit={handleSubmit}/> */}
-              <ControlButton />
+              <StepController />
             </div>
           </section>
         </FormContext.Provider>
