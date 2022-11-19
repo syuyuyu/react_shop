@@ -1,12 +1,15 @@
 import {useContext} from 'react';
 import {CartContext} from '../Context/CartContext'
+import {CartTotalContext} from '../Context/CartTotalContext'
 
 export default function CartItems(){
   //帶入context的值
   const {lists,setLists} = useContext(CartContext);
-  
+  const {total,setTotal} = useContext(CartTotalContext);
 
+  
   function handleMinusClick(listId){
+    let totalCash = 0
     let nextLists = lists.map(li=>{
       if(listId === li.id && li.quantity>0){
         return {
@@ -17,10 +20,15 @@ export default function CartItems(){
         return li
       };
     });
+    nextLists.forEach(li =>{
+      totalCash += li.price*li.quantity
+    })
+    setTotal(totalCash)
     setLists(nextLists)
-  }
+  };
 
   function handleAddClick(listId){
+    let totalCash = 0
     let nextLists = lists.map(li=>{
       if(listId === li.id){
         return {
@@ -31,9 +39,12 @@ export default function CartItems(){
         return li
       };
     });
+    nextLists.forEach(li =>{
+      totalCash += li.price*li.quantity
+    })
+    setTotal(totalCash)
     setLists(nextLists)
   };
-    
 
 
   return(
@@ -52,6 +63,7 @@ export default function CartItems(){
               onClick={()=>{handleMinusClick(list.id)}}
               id={list.id}
               className="cart-content-btn cart-content-btn-minus">-</div>
+            {/* 顯示數量位置 */}
             <div className="cart-content-num">{list.quantity}</div>
             <div
               onClick={()=>{handleAddClick(list.id)}}

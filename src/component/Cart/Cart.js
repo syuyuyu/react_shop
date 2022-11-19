@@ -11,11 +11,8 @@ export default function Cart(){
   const {total,setTotal} = useContext(CartTotalContext);
 
 
-  let totalCash = 0
-  lists.forEach(list =>{
-    totalCash += list.price*list.quantity
-    setTotal(totalCash)
-  })
+
+
 
   return (
     <div className="cart-container">

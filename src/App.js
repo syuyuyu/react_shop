@@ -26,7 +26,7 @@ export default function App(){
   const [stepData,setStepData]=useState('step1');
   const [value,setValue] = useState(inputValue);
   const [isPopup,setIsPopup] = useState(false)
-  const [total,setTotal] = useState(0)
+  const [total,setTotal] = useState(400)
 
 
 

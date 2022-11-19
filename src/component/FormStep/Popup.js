@@ -1,10 +1,13 @@
 import {useContext} from 'react'
 import {InputValueContext} from '../Context/InputValueContext.js';
 import { IsPopupContext } from '../Context/IsPopupContext.js';
+import {CartTotalContext} from '../Context/CartTotalContext'
 
 export default function Popup(){
 const {value,setValue} = useContext(InputValueContext);
 const {isPopup,setIsPopup}=useContext(IsPopupContext);
+const {total,setTotal} = useContext(CartTotalContext);
+
 
 
 
@@ -26,6 +29,7 @@ function handleOffClick(){
         <h3>卡號:  {value.number}</h3>
         <h3>有效期限:  {value.term}</h3>
         <h3>CVC/CCD:  {value.cvc}</h3>
+        <h3>Total:  {total}</h3>
         <button className="popup-button" onClick={handleOffClick}>
           關閉
         </button>
