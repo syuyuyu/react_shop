@@ -3,6 +3,7 @@ import {useState,useContext} from 'react'
 import { FormContext } from './component/Context/FormContext.js';
 import { InputValueContext } from './component/Context/InputValueContext.js';
 import {inputValue} from './component/Context/InputValueContext.js';
+import { IsPopupContext } from './component/Context/IsPopupContext.js';
 
 
 import './style/App.css';
@@ -17,30 +18,25 @@ import ControlButton from './component/StepController/StepController.js'
 import Header from './component/Header/Header.js'
 import Footer from './component/Footer/Footer.js'
 import Cart from './component/Cart/Cart.js'
+import Popup from './component/FormStep/Popup.js'
 
 
 export default function App(){
   const [stepData,setStepData]=useState('step1');
   const [value,setValue] = useState(inputValue);
+  const [isPopup,setIsPopup] = useState(false)
 
-  function handleSubmit(){
-    console.log(value)
-    setValue({
-      name : '',
-      number: '',
-      term: '',
-      cvc: '',
-    })
-  }
+
 
 
 
   return (
     <>
       <Header />
-      <div className='container'>
-        <FormContext.Provider value={{stepData,setStepData,handleSubmit}}>
         <InputValueContext.Provider value={{value,setValue}}>
+      <IsPopupContext.Provider value={{isPopup,setIsPopup}}>
+      <div className='container'>
+        <FormContext.Provider value={{stepData,setStepData}}>
           <section className='main'>
               <div className='title'>
                 <StepLine />
@@ -52,15 +48,20 @@ export default function App(){
               {stepData === 'step3' && <FormStep3 />}
             </div>
             <div className='control-button'>
-              <ControlButton onStep3Submit={handleSubmit}/>
+              {/* <ControlButton onStep3Submit={handleSubmit}/> */}
+              <ControlButton />
             </div>
           </section>
-        </InputValueContext.Provider>
         </FormContext.Provider>
         <section className='cart'>
           <Cart />
         </section>
       </div>
+      {/* submit後彈出視窗 */}
+
+      {isPopup && <Popup />}
+      </IsPopupContext.Provider>
+      </InputValueContext.Provider>
       <Footer />
     </>
   )

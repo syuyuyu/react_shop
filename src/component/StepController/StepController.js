@@ -1,10 +1,16 @@
 import {useContext} from 'react'
 import { FormContext } from '../Context/FormContext.js';
+import {InputValueContext} from '../Context/InputValueContext.js';
+import { IsPopupContext } from '../Context/IsPopupContext.js';
 
 
-export default function ControlButton({onStep3Submit}){
-  const {stepData,setStepData}=useContext(FormContext)
 
+export default function ControlButton(){
+  const {stepData,setStepData}=useContext(FormContext);
+const {isPopup,setIsPopup}=useContext(IsPopupContext);
+  const {value,setValue} = useContext(InputValueContext);
+
+  
   function handleNextStep(){
     if(stepData === 'step1'){
       setStepData('step2')
@@ -25,6 +31,10 @@ export default function ControlButton({onStep3Submit}){
     }
   }  
 
+  function handleSubmit(){
+    setIsPopup(!isPopup)
+    console.log(value)
+  }
 
 
 
@@ -55,7 +65,7 @@ export default function ControlButton({onStep3Submit}){
       <div className="btn-step-3" data-step="step3">
         <div className='btn-step'>
           <div onClick={handlePrevStep} className="btn-prev">←上一步</div>
-          <div onClick={()=>onStep3Submit()} className="btn-next">確認下單</div>
+          <div onClick={handleSubmit} className="btn-next">確認下單</div>
         </div>
       </div>
     )

@@ -365,3 +365,36 @@ input[name='card-cvc'] {
   color: white;
   cursor: pointer;
 }
+
+/********** Popup.js **********/
+.popup-wrap{
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: white;
+  height: 400px;
+  width: 600px;
+  position: sticky;
+  left: 250px;
+  bottom: 200px;
+  box-shadow:8px 8px 15px -3px rgba(0, 0, 0, 0.5);
+}
+.popup-content{
+  margin: 2rem 2rem;
+  text-align: center;
+}
+.popup-content > h1{
+  margin-bottom: 3rem;
+}
+.popup-content > h3{
+  margin-top: 1rem;
+}
+.popup-button{
+  margin-top: 6rem;
+  background-color: rgb(121, 159, 236);
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  padding: .5rem 1rem;
+  cursor: pointer;
+}

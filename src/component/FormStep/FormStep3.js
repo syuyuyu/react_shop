@@ -5,6 +5,7 @@ import {InputValueContext} from '../Context/InputValueContext.js';
 export default function FormStep3(){
   const {value,setValue} = useContext(InputValueContext);
 
+  //當input輸入時，setValue跟著更新狀態
   function handleValueChange(e){
     const name = e.target.name
     if(name === 'card-name' ){
@@ -28,7 +29,6 @@ export default function FormStep3(){
         cvc : e.target.value
       })
     };
-    // console.log(value)
   }
 
 
