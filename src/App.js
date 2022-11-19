@@ -1,9 +1,10 @@
 import React from 'react';
-import {useState,useContext} from 'react'
+import {useState} from 'react'
 import { FormContext } from './component/Context/FormContext.js';
 import { InputValueContext } from './component/Context/InputValueContext.js';
 import {inputValue} from './component/Context/InputValueContext.js';
 import { IsPopupContext } from './component/Context/IsPopupContext.js';
+import {CartTotalContext} from './component/Context/CartTotalContext.js'
 
 
 import './style/App.css';
@@ -25,23 +26,22 @@ export default function App(){
   const [stepData,setStepData]=useState('step1');
   const [value,setValue] = useState(inputValue);
   const [isPopup,setIsPopup] = useState(false)
-
-
+  const [total,setTotal] = useState(0)
 
 
 
   return (
     <>
       <Header />
-        <InputValueContext.Provider value={{value,setValue}}>
+      <InputValueContext.Provider value={{value,setValue}}>
       <IsPopupContext.Provider value={{isPopup,setIsPopup}}>
+      <CartTotalContext.Provider value={{total,setTotal}}>
       <div className='container'>
         <FormContext.Provider value={{stepData,setStepData}}>
           <section className='main'>
               <div className='title'>
                 <StepLine />
               </div>
-            
             <div className='form'>
               {stepData === 'step1' && <FormStep1 />}
               {stepData === 'step2' && <FormStep2 />}
@@ -56,10 +56,10 @@ export default function App(){
         <section className='cart'>
           <Cart />
         </section>
-      </div>
       {/* submit後彈出視窗 */}
-
       {isPopup && <Popup />}
+      </div>
+      </CartTotalContext.Provider>
       </IsPopupContext.Provider>
       </InputValueContext.Provider>
       <Footer />

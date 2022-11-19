@@ -28,12 +28,12 @@ export default function StepLine(){
           <div className='step-number bg-black'>{step1.id}</div>
           <p>{step1.name}</p>
         </div>
-        <div className="step-run-line "></div>
+        <div className={stepData === 'step2'? "step-run-line": "step-run-line bg-grey"}></div>
         <div className='step-item bg-grey'>
           <div className={stepData === 'step2' || stepData === 'step3'? 'step-number bg-black':'step-number'}>{step2.id}</div>
           <p>{step2.name}</p>
         </div>
-        <div className="step-run-line bg-grey"></div>
+        <div className={stepData === 'step3'? "step-run-line": "step-run-line bg-grey"}></div>
         <div className='step-item bg-grey'>
           <div className={stepData === 'step3'? 'step-number bg-black':'step-number'}>{step3.id}</div>
           <p>{step3.name}</p>

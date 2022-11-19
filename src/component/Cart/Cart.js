@@ -1,17 +1,20 @@
 import React from 'react';
 import CartItems from './CartItems'
-import {useState} from 'react';
+import {useState,useContext} from 'react';
 import {CartContext,CartList} from '../Context/CartContext'
+import {CartTotalContext} from '../Context/CartTotalContext'
 
 
 //方法一 使用prop傳值，另一半在CartItems.js裡
 export default function Cart(){
-  const [lists,setLists]=useState(CartList)
+  const [lists,setLists] = useState(CartList);
+  const {total,setTotal} = useContext(CartTotalContext);
 
 
   let totalCash = 0
   lists.forEach(list =>{
     totalCash += list.price*list.quantity
+    setTotal(totalCash)
   })
 
   return (
@@ -28,7 +31,7 @@ export default function Cart(){
         </div>
         <div className="cart-down cart-total">
           <div>小計</div>
-          <div>{totalCash}</div>
+          <div>{total}</div>
         </div>
     </div>
   )

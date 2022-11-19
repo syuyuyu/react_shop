@@ -2,6 +2,8 @@ import {useContext} from 'react'
 import { FormContext } from '../Context/FormContext.js';
 import {InputValueContext} from '../Context/InputValueContext.js';
 import { IsPopupContext } from '../Context/IsPopupContext.js';
+import {CartTotalContext} from '../Context/CartTotalContext'
+
 import Step1 from './Step/Step1.js'
 import Step2 from './Step/Step2.js'
 import Step3 from './Step/Step3.js'
@@ -12,6 +14,7 @@ export default function StepController(){
   const {stepData,setStepData}=useContext(FormContext);
 const {isPopup,setIsPopup}=useContext(IsPopupContext);
   const {value,setValue} = useContext(InputValueContext);
+  const {total,setTotal} = useContext(CartTotalContext);
 
   
   function handleNextStep(){
@@ -37,6 +40,7 @@ const {isPopup,setIsPopup}=useContext(IsPopupContext);
   function handleSubmit(){
     setIsPopup(!isPopup)
     console.log(value)
+    console.log('total='+total)
   }
 
 
